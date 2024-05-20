@@ -101,6 +101,32 @@ class FeedItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.blue.shade300,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                  Text(feedData.userName),
+                ],
+              ),
+              const Icon(Icons.more_vert),
+            ],
+          ),
+        )
+      ],
+    );
   }
 }
