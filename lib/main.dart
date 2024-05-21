@@ -49,7 +49,8 @@ class _InstaCloneHomeState extends State<InstaCloneHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      // visibility 는 visible의 값이 참일 때만 보여지는 위젯.
+      appBar: index == 0 ? AppBar( // appBar는 visibility 로 감쌀 수 없어서 삼항연산자로. index가 0이라면 home, 아니라면 search feed이다.
         title: Text(
           'Instagram',
           style: GoogleFonts.lobsterTwo(color: Colors.black, fontSize: 32),
@@ -70,7 +71,7 @@ class _InstaCloneHomeState extends State<InstaCloneHome> {
           ),
         ],
         backgroundColor: Colors.white,
-      ),
+      ) : null,
       body: InstaBody(index: index),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: index, //현재 활성화(클릭) 네비게이션바의 인덱스

@@ -164,7 +164,7 @@ class FeedItem extends StatelessWidget {
             style: const TextStyle(color: Colors.black),
           ),),
         ),
-        const SizedBox(height: 8,),
+        const SizedBox(height: 8),
       ],
     );
   }
