@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -102,6 +103,7 @@ class FeedItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
@@ -125,7 +127,44 @@ class FeedItem extends StatelessWidget {
               const Icon(Icons.more_vert),
             ],
           ),
-        )
+        ),
+        const SizedBox(height: 8),
+        Container(
+          width: double.infinity,
+          height: 280,
+          color: Colors.indigo.shade300,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_outline)),
+                  IconButton(onPressed: () {}, icon: const Icon(CupertinoIcons.chat_bubble)),
+                  IconButton(onPressed: () {}, icon: const Icon(CupertinoIcons.paperplane)),
+                ],
+              ),
+              IconButton(onPressed: () {}, icon: const Icon(CupertinoIcons.bookmark)),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: Text('좋아요 ${feedData.likeCount}개', style: const TextStyle(fontWeight: FontWeight.bold),),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
+          child: RichText(text: TextSpan(
+            children: [
+              TextSpan(text: feedData.userName, style: const TextStyle(fontWeight: FontWeight.bold)),
+              TextSpan(text: feedData.content),
+            ],
+            style: const TextStyle(color: Colors.black),
+          ),),
+        ),
+        const SizedBox(height: 8,),
       ],
     );
   }
