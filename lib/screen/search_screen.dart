@@ -62,7 +62,7 @@ class SearchGrid extends StatelessWidget {
       padding: EdgeInsets.zero,
       mainAxisSpacing: 4,
       crossAxisSpacing: 4,
-      crossAxisCount: 3, //콘텐츠 3개로 배치
+      crossAxisCount: 3, // 콘텐츠 3개로 배치
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: gridItems.map((color) => Container(color: color)).toList(),
